@@ -160,6 +160,11 @@ The app requires the following permissions:
 - **File Actions**: Implement custom actions in `FilesAdapter` click handlers
 - **Permissions**: Add storage permissions for file system access
 
+## Resources
+- [Bugs](BUGS.md)
+- [AWS](AWS.md)
+- [AWS Setup](AWS_SETUP.md)
+
 ## Contributing
 
 1. Fork the repository
