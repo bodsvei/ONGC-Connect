@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">InfoCom Jorhat</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">InfoCom Jorhat</string>
+    <string name="nav_header_subtitle">Made by Interns @ info_jrt@ongc.co.in</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_files">Asset Directory</string>
+    <string name="menu_qr_scanner">QR Scanner</string>
+    <string name="qr_scanner_instructions">Position QR code within the frame</string>
+    <string name="qr_scanner_permission_required">Camera permission is required</string>
+    <string name="qr_scanner_scanned">Scanned: %s</string>
+    <string name="qr_scanner_copied_to_clipboard">QR code copied to clipboard</string>
+    <string name="files_search_hint">Search assets</string>
+    <string name="files_empty_state">No assets found</string>
+    <string name="menu_server_stats">Server Stats</string>
+    <string name="server_stats_title">AWS Server Statistics</string>
+    <string name="server_stats_refresh">Refresh</string>
+    <string name="server_stats_empty_state">No server statistics available</string>
+    <string name="home_welcome_message">Welcome to InfoCom Jorhat</string>
+    <string name="home_quick_access">Quick Access</string>
+    <string name="home_files_description">Browse and search assets</string>
+    <string name="home_qr_scanner_description">Scan QR codes instantly</string>
+    <string name="home_server_stats_description">Monitor AWS server performance</string>
+</resources>

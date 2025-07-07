@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.ongc.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_files"
+        android:name="com.example.ongc.ui.files.FilesFragment"
+        android:label="@string/menu_files"
+        tools:layout="@layout/fragment_files" />
+
+    <fragment
+        android:id="@+id/nav_qr_scanner"
+        android:name="com.example.ongc.ui.qrscanner.QRScannerFragment"
+        android:label="@string/menu_qr_scanner"
+        tools:layout="@layout/fragment_qrscanner" />
+
+    <fragment
+        android:id="@+id/nav_server_stats"
+        android:name="com.example.ongc.ui.serverstats.ServerStatsFragment"
+        android:label="@string/menu_server_stats"
+        tools:layout="@layout/fragment_server_stats" />
+
+    <action
+        android:id="@+id/action_nav_qr_scanner_to_nav_files"
+        app:destination="@id/nav_files" />
+</navigation>
