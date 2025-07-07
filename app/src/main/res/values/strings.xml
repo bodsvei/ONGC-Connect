@@ -10,10 +10,11 @@
     <string name="menu_home">Home</string>
     <string name="menu_files">Asset Directory</string>
     <string name="menu_qr_scanner">QR Scanner</string>
-    <string name="qr_scanner_instructions">Position QR code within the frame</string>
+    <string name="qr_scanner_instructions">Scan QR code to search in Asset Directory</string>
     <string name="qr_scanner_permission_required">Camera permission is required</string>
     <string name="qr_scanner_scanned">Scanned: %s</string>
-    <string name="qr_scanner_copied_to_clipboard">QR code copied to clipboard</string>
+    <string name="qr_scanner_searching_assets">Searching in Asset Directory...</string>
+    <string name="qr_scanner_searching_for">Searching for: %s</string>
     <string name="files_search_hint">Search assets</string>
     <string name="files_empty_state">No assets found</string>
     <string name="menu_server_stats">Server Stats</string>

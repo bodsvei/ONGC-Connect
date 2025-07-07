@@ -1,8 +1,6 @@
 package com.example.ongc.ui.qrscanner
 
 import android.Manifest
-import android.content.ClipData
-import android.content.ClipboardManager
 import android.content.Context
 import android.content.pm.PackageManager
 import android.os.Bundle
@@ -10,7 +8,6 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.camera.core.*
@@ -18,6 +15,7 @@ import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import com.example.ongc.R
 import com.example.ongc.databinding.FragmentQrscannerBinding
 import com.google.mlkit.vision.barcode.BarcodeScanning
@@ -25,6 +23,7 @@ import com.google.mlkit.vision.barcode.common.Barcode
 import com.google.mlkit.vision.common.InputImage
 import java.util.concurrent.ExecutorService
 import java.util.concurrent.Executors
+import androidx.core.content.edit
 
 class QRScannerFragment : Fragment() {
 
@@ -76,6 +75,9 @@ class QRScannerFragment : Fragment() {
                 // Search in Asset Directory
                 searchInAssetDirectory(text)
                 Toast.makeText(context, getString(R.string.qr_scanner_searching_assets), Toast.LENGTH_SHORT).show()
+                
+                // Clear the scanned text to prevent re-triggering
+                qrScannerViewModel.setScannedText("")
             }
         }
 
@@ -130,14 +132,20 @@ class QRScannerFragment : Fragment() {
     ) == PackageManager.PERMISSION_GRANTED
 
     private fun searchInAssetDirectory(searchQuery: String) {
-        // Navigate to Asset Directory with search query
-        val action = QRScannerFragmentDirections.actionNavQrScannerToNavFiles()
-        findNavController().navigate(action)
-        
         // Pass the search query to the Asset Directory
-        // We'll use a shared preference or view model to pass the search query
         val sharedPrefs = requireContext().getSharedPreferences("QRSearch", Context.MODE_PRIVATE)
-        sharedPrefs.edit().putString("search_query", searchQuery).apply()
+        sharedPrefs.edit { putString("search_query", searchQuery) }
+        
+        // Navigate to Asset Directory
+        findNavController().navigate(R.id.nav_files)
+    }
+
+    override fun onResume() {
+        super.onResume()
+        // Reset the scanner state when returning to this fragment
+        qrScannerViewModel.setScannedText("")
+        binding.resultText.visibility = View.GONE
+        binding.instructionsText.visibility = View.VISIBLE
     }
 
     override fun onDestroyView() {

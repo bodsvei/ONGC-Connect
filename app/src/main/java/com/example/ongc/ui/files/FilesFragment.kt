@@ -13,6 +13,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.ongc.R
 import com.example.ongc.databinding.FragmentFilesBinding
+import androidx.core.content.edit
 
 class FilesFragment : Fragment() {
 
@@ -92,6 +93,15 @@ class FilesFragment : Fragment() {
                 binding.emptyStateText.visibility = View.GONE
                 binding.filesRecyclerView.visibility = View.VISIBLE
             }
+        }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        // Clear any leftover search query when returning to this fragment
+        val sharedPrefs = requireContext().getSharedPreferences("QRSearch", Context.MODE_PRIVATE)
+        if (sharedPrefs.contains("search_query")) {
+            sharedPrefs.edit().remove("search_query").apply()
         }
     }
 
