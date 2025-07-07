@@ -1,4 +1,4 @@
-# ONGC Android App
+# InfoCom Jorhat
 
 A modern Android application built with Kotlin and Material Design, featuring navigation drawer, QR code scanning, and file management capabilities.
 
