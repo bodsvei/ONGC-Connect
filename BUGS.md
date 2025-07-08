@@ -50,4 +50,4 @@ When you pressed the back button from Asset Directory to QR Scanner, the QR scan
  - **Press back button to return to QR scanner**
  - **QR scanner is reset and ready for a new scan**
  - **No infinite loop or repeated searches**  
-The app should now work smoothly without getting stuck in loops!
+The app works smoothly now without getting stuck in loops!
